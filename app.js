@@ -6,7 +6,9 @@ var express    = require("express"),
     methodOverride = require("method-override");
 
 //APP CONFIG
-mongoose.connect("mongodb://localhost/student_app");
+//mongoose.connect("mongodb://localhost/student_app");
+mongoose.connect("mongodb://jerry:jeremiah@ds241025.mlab.com:41025/studentresource");
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
 app.use(express.static("public"));
