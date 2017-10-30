@@ -6,8 +6,8 @@ var express    = require("express"),
     methodOverride = require("method-override");
 
 //APP CONFIG
-mongoose.connect(process.env.DATABASEURL);
-// mongoose.connect("mongodb://jerry:jeremiah@ds241025.mlab.com:41025/studentresource");
+var url = process.env.DATABASEURL || "mongodb://localhost/student_app";
+mongoose.connect(url);
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
